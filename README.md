@@ -1,0 +1,1 @@
+# Smart-food-wastage-and-donation-tracker
