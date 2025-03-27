@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Smart Food Wastage and Donation Tracker</title>
+ <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+
+ <header class="bg-white py-4 shadow-lg border-b-4 border-green-500"> 
+  <nav class="container mx-auto flex items-center justify-between px-4">
+   <div class="flex items-center space-x-4">
+    <img src="images/Nowaste.png" alt="Food Waste Tracker Logo" class="w-16 h-16 rounded-full shadow-md">
+    <div>
+      <a href="index.html" class="text-gray-800 text-2xl font-bold logo-text">NoWaste</a>
+      <p class="text-green-600 text-sm tracking-wider">Smart Food Wastage and Donation Tracker</p>
+    </div>
+   </div>
+   <div class="flex items-center space-x-6">
+    <a href="about.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">About</a>
+    <a href="contact.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">Contact</a>
+    <a href="feedback.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">Feedback</a>
+    <a href="login.html" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full hover:shadow-lg transition duration-300 flex items-center space-x-1">
+      <span>Login</span>
+      <i class="fas fa-arrow-right text-xs"></i>
+    </a>
+   </div>
+  </nav>
+ </header>
+
+ <div class="hero-banner relative py-20 overflow-hidden">
+  <div class="absolute inset-0 z-0 hero-pattern opacity-5"></div>
+  <div class="container mx-auto relative z-10 px-4">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800 main-heading">
+          Fight Food Waste,<br>
+          <span class="text-green-600">Feed Communities</span>
+        </h1>
+        <p class="text-gray-700 leading-relaxed text-lg max-w-xl">
+   Our Smart Food Wastage and Donation Tracker helps you monitor your food consumption, reduce waste, and connect with local charities to donate surplus food.
+  </p>
+        <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
+          <a href="learn-more.html" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-hover flex items-center">
+            <i class="fas fa-info-circle mr-2"></i>Learn More
+          </a>
+          <a href="food-donor.html" class="bg-white border-2 border-green-500 text-green-600 font-bold py-3 px-8 rounded-full hover:bg-green-50 transition duration-300 btn-hover flex items-center">
+            <i class="fas fa-hand-holding-heart mr-2"></i>Become a Donor
+          </a>
+        </div>
+        <div class="mt-8 flex items-center justify-center md:justify-start">
+          <span class="text-gray-500 text-sm mr-2">Downloaded</span>
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs">10K+</div>
+            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-white text-xs">⭐</div>
+            <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <span class="text-gray-500 text-sm ml-2">Users Trust Us</span>
+        </div>
+      </div>
+      <div class="md:w-1/2 relative">
+        <div class="hero-image-container">
+          <img src="images/Donation.png" alt="Food Waste Illustration" class="w-64 h-64 mx-auto object-cover rounded-full shadow-2xl border-4 border-white">
+          <div class="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg icon-float">
+            <i class="fas fa-carrot text-2xl text-green-500"></i>
+          </div>
+          <div class="absolute -top-4 -left-4 bg-white p-3 rounded-full shadow-lg icon-float-delay">
+            <i class="fas fa-apple-alt text-2xl text-red-500"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <section class="container mx-auto mt-16 px-4">
+  <div class="text-center mb-12">
+    <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-3">Our Mission</span>
+    <h2 class="text-3xl font-bold text-gray-800">How We Make a Difference</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-white p-8 rounded-xl shadow-md text-center feature-card" data-animate="animate-fade-in">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-6">
+        <i class="fas fa-leaf text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold mb-3">Reduce Waste</h3>
+      <p class="text-gray-600">Smart inventory management to track expiration dates and reduce food waste at home</p>
+    </div>
+    <div class="bg-white p-8 rounded-xl shadow-md text-center feature-card" data-animate="animate-fade-in">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-6">
+        <i class="fas fa-hands-helping text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold mb-3">Help Communities</h3>
+      <p class="text-gray-600">Connect with local food banks and charities to donate excess food to those in need</p>
+    </div>
+    <div class="bg-white p-8 rounded-xl shadow-md text-center feature-card" data-animate="animate-fade-in">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 text-purple-600 rounded-full mb-6">
+        <i class="fas fa-chart-bar text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold mb-3">Track Impact</h3>
+      <p class="text-gray-600">Visualize your contribution to reducing food waste and feeding communities in need</p>
+    </div>
+  </div>
+ </section>
+
+ <section class="bg-green-50 py-16 mt-20">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-3">Get Started Today</span>
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Ready to Make a Difference?</h2>
+        <p class="text-gray-700 mb-8">Join thousands of individuals and businesses already using NoWaste to reduce food waste and help communities in need.</p>
+        <a href="tracker.html" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-hover inline-flex items-center">
+          <i class="fas fa-chart-line mr-2"></i>Track Donations
+        </a>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-4">
+        <div class="bg-white p-6 rounded-lg shadow-md stat-card">
+          <div class="text-green-500 text-4xl font-bold">15K+</div>
+          <p class="text-gray-600">Meals Donated</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md stat-card">
+          <div class="text-blue-500 text-4xl font-bold">400+</div>
+          <p class="text-gray-600">Charity Partners</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md stat-card">
+          <div class="text-purple-500 text-4xl font-bold">8K+</div>
+          <p class="text-gray-600">Active Users</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md stat-card">
+          <div class="text-yellow-500 text-4xl font-bold">4.9<span class="text-sm">⭐</span></div>
+          <p class="text-gray-600">User Rating</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+ <footer class="bg-gray-800 text-white py-12 mt-16">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="images/Nowaste.png" alt="NoWaste Logo" class="w-10 h-10 rounded-full">
+          <span class="text-xl font-bold">NoWaste</span>
+        </div>
+        <p class="text-gray-400 text-sm">Smart solution for food waste reduction and community support through efficient donation tracking.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">How It Works</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+        <div class="flex space-x-4 mb-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">Subscribe to our newsletter</p>
+        <div class="flex mt-2">
+          <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l-lg w-full text-gray-800">
+          <button class="bg-green-500 hover:bg-green-600 text-white px-4 rounded-r-lg transition">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p>&copy; 2024 NoWaste Food Tracker. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-white transition">Privacy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Terms</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Cookies</a>
+      </div>
+    </div>
+  </div>
+ </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>

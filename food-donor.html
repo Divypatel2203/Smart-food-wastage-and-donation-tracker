@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Food Donor - Smart Food Wastage and Donation Tracker</title>
+ <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+
+ <header class="bg-white py-4 shadow-lg border-b-4 border-green-500"> 
+  <nav class="container mx-auto flex items-center justify-between px-4">
+   <div class="flex items-center space-x-4">
+    <img src="images/Nowaste.png" alt="Food Waste Tracker Logo" class="w-16 h-16 rounded-full shadow-md">
+    <div>
+      <a href="index.html" class="text-gray-800 text-2xl font-bold logo-text">NoWaste</a>
+      <p class="text-green-600 text-sm tracking-wider">Smart Food Wastage and Donation Tracker</p>
+    </div>
+   </div>
+   <div class="flex items-center space-x-6">
+    <a href="about.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">About</a>
+    <a href="contact.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">Contact</a>
+    <a href="feedback.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">Feedback</a>
+    <a href="login.html" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full hover:shadow-lg transition duration-300 flex items-center space-x-1">
+      <span>Login</span>
+      <i class="fas fa-arrow-right text-xs"></i>
+    </a>
+   </div>
+  </nav>
+ </header>
+
+ <div class="bg-green-50 py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-3">Food Donations</span>
+      <h1 class="text-4xl font-bold mb-6 text-gray-800">Become a Food Donor</h1>
+      <p class="text-gray-600 leading-relaxed">Your generosity can make a significant difference in the lives of individuals and families facing hunger. Join our network of food donors and help reduce waste while supporting communities in need.</p>
+    </div>
+   </div>
+    </div>
+
+ <section class="container mx-auto py-16 px-4">
+  <div class="max-w-4xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12" data-animate="animate-fade-in">
+      <div class="p-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Donate Food</h2>
+        <p class="text-gray-600 mb-8">Please enter the details of the food you would like to donate:</p>
+        
+        <form id="donation-form">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="food-description" class="block text-sm font-medium text-gray-700 mb-1">Food Description</label>
+              <input type="text" id="food-description" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition" placeholder="Description of the food">
+    </div>
+            <div>
+              <label for="food-category" class="block text-sm font-medium text-gray-700 mb-1">Food Category</label>
+              <select id="food-category" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition">
+                <option value="">Select category</option>
+                <option value="fruits-vegetables">Fruits & Vegetables</option>
+                <option value="canned-goods">Canned Goods</option>
+                <option value="grains-pasta">Grains & Pasta</option>
+                <option value="dairy">Dairy Products</option>
+                <option value="meat-protein">Meat & Protein</option>
+                <option value="baked-goods">Baked Goods</option>
+                <option value="meals">Prepared Meals</option>
+                <option value="other">Other</option>
+              </select>
+    </div>
+   </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="quantity" class="block text-sm font-medium text-gray-700 mb-1">Quantity</label>
+              <div class="flex">
+                <input type="number" id="quantity" class="w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition" placeholder="Quantity">
+                <select id="quantity-unit" class="border border-gray-300 rounded-r-lg px-3 py-2 focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition">
+                  <option value="items">Items</option>
+                  <option value="kg">Kg</option>
+                  <option value="lbs">Lbs</option>
+                  <option value="servings">Servings</option>
+                  <option value="packages">Packages</option>
+     </select>
+    </div>
+   </div>
+            <div>
+              <label for="expiration-date" class="block text-sm font-medium text-gray-700 mb-1">Expiration Date</label>
+              <input type="date" id="expiration-date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition">
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <label for="pickup-address" class="block text-sm font-medium text-gray-700 mb-1">Pickup Address</label>
+            <input type="text" id="pickup-address" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition" placeholder="Street address for pickup">
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div>
+              <label for="pickup-city" class="block text-sm font-medium text-gray-700 mb-1">City</label>
+              <input type="text" id="pickup-city" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition" placeholder="City">
+            </div>
+            <div>
+              <label for="pickup-state" class="block text-sm font-medium text-gray-700 mb-1">State</label>
+              <input type="text" id="pickup-state" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition" placeholder="State">
+            </div>
+            <div>
+              <label for="pickup-zip" class="block text-sm font-medium text-gray-700 mb-1">ZIP Code</label>
+              <input type="text" id="pickup-zip" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition" placeholder="ZIP Code">
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <label for="donor-notes" class="block text-sm font-medium text-gray-700 mb-1">Additional Notes</label>
+            <textarea id="donor-notes" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition" placeholder="Special handling instructions, packaging details, or other information"></textarea>
+          </div>
+          
+          <div class="mb-6">
+            <label for="preferred-recipient" class="block text-sm font-medium text-gray-700 mb-1">Preferred Recipient Type (Optional)</label>
+            <select id="preferred-recipient" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition">
+              <option value="any">Any Organization</option>
+              <option value="food-bank">Food Bank</option>
+              <option value="shelter">Homeless Shelter</option>
+              <option value="school">School Program</option>
+              <option value="community">Community Center</option>
+              <option value="religious">Religious Organization</option>
+            </select>
+          </div>
+          
+          <div class="mb-6">
+            <label class="flex items-center">
+              <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+              <span class="ml-2 text-gray-600 text-sm">I confirm the food is safe, unexpired, and meets quality standards for donation</span>
+            </label>
+          </div>
+          
+   <div class="flex justify-center">
+            <button type="button" id="donate-button" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 btn-hover">
+              <i class="fas fa-hand-holding-heart mr-2"></i>Donate Now
+    </button>
+   </div>
+  </form>
+
+        <div id="donation-message" class="mt-8 p-4 bg-green-100 text-green-700 rounded-lg hidden">
+          <div class="flex items-center">
+            <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+            <div>
+              <h3 class="font-semibold">Thank you for your donation!</h3>
+              <p>Your generous contribution has been recorded. A confirmation will be sent to your email shortly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="bg-white p-8 rounded-xl shadow-lg" data-animate="animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Guidelines for Donating</h2>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+              <i class="fas fa-check text-green-600 text-sm"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-gray-600">Ensure all food items are unexpired and in good condition</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+              <i class="fas fa-check text-green-600 text-sm"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-gray-600">Preferably donate non-perishable items such as canned goods, pasta, rice, and cereals</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+              <i class="fas fa-check text-green-600 text-sm"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-gray-600">For perishable items, proper storage and temperature control is essential</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+              <i class="fas fa-check text-green-600 text-sm"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-gray-600">Food must be in original packaging with ingredient lists when possible</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center mt-1">
+              <i class="fas fa-check text-green-600 text-sm"></i>
+            </div>
+            <div class="ml-3">
+              <p class="text-gray-600">Prepare food items for transportation by placing in secure, clean containers</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="bg-white p-8 rounded-xl shadow-lg" data-animate="animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">Most Needed Items</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 border border-gray-200 rounded-lg hover:bg-green-50 transition">
+            <i class="fas fa-apple-alt text-green-500 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800">Fresh Produce</h3>
+            <p class="text-gray-600 text-sm">Fruits & vegetables</p>
+          </div>
+          <div class="p-4 border border-gray-200 rounded-lg hover:bg-green-50 transition">
+            <i class="fas fa-bread-slice text-green-500 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800">Grains</h3>
+            <p class="text-gray-600 text-sm">Rice, pasta, cereal</p>
+          </div>
+          <div class="p-4 border border-gray-200 rounded-lg hover:bg-green-50 transition">
+            <i class="fas fa-egg text-green-500 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800">Proteins</h3>
+            <p class="text-gray-600 text-sm">Canned meat, beans</p>
+          </div>
+          <div class="p-4 border border-gray-200 rounded-lg hover:bg-green-50 transition">
+            <i class="fas fa-cheese text-green-500 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800">Dairy</h3>
+            <p class="text-gray-600 text-sm">Milk, cheese, yogurt</p>
+          </div>
+          <div class="p-4 border border-gray-200 rounded-lg hover:bg-green-50 transition">
+            <i class="fas fa-baby text-green-500 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800">Baby Items</h3>
+            <p class="text-gray-600 text-sm">Formula, baby food</p>
+          </div>
+          <div class="p-4 border border-gray-200 rounded-lg hover:bg-green-50 transition">
+            <i class="fas fa-utensils text-green-500 text-xl mb-2"></i>
+            <h3 class="font-semibold text-gray-800">Prepared Meals</h3>
+            <p class="text-gray-600 text-sm">Packaged meals</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+ <section class="bg-green-50 py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-3">Donation Process</span>
+      <h2 class="text-3xl font-bold text-gray-800">How It Works</h2>
+      <p class="text-gray-600 mt-4">Our streamlined donation process makes it easy to contribute and track your impact.</p>
+  </div>
+
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-md text-center" data-animate="animate-fade-in">
+          <div class="w-16 h-16 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
+            <i class="fas fa-clipboard-list text-2xl text-green-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">1. Register Donation</h3>
+          <p class="text-gray-600">Fill out the donation form with details about your food items</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md text-center" data-animate="animate-fade-in">
+          <div class="w-16 h-16 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
+            <i class="fas fa-handshake text-2xl text-green-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">2. Get Matched</h3>
+          <p class="text-gray-600">We connect you with local organizations that need your donation</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md text-center" data-animate="animate-fade-in">
+          <div class="w-16 h-16 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
+            <i class="fas fa-truck text-2xl text-green-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">3. Arrange Pickup</h3>
+          <p class="text-gray-600">Schedule a convenient time for pickup or delivery of the food</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md text-center" data-animate="animate-fade-in">
+          <div class="w-16 h-16 mx-auto rounded-full bg-green-100 flex items-center justify-center mb-4">
+            <i class="fas fa-chart-line text-2xl text-green-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">4. Track Impact</h3>
+          <p class="text-gray-600">Receive updates about how your donation helps the community</p>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+ <section class="py-16 container mx-auto px-4 text-center">
+  <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-3">Connect With Us</span>
+  <h2 class="text-3xl font-bold mb-6 text-gray-800">Need Help With Your Donation?</h2>
+  <p class="text-gray-600 max-w-2xl mx-auto mb-10">
+    Our team is ready to assist you with any questions or concerns about the donation process.
+  </p>
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="contact.html" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-hover flex items-center">
+      <i class="fas fa-envelope mr-2"></i>Contact Us
+    </a>
+    <a href="tel:+1-800-NOWASTE" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-hover flex items-center">
+      <i class="fas fa-phone-alt mr-2"></i>Call Support
+    </a>
+  </div>
+ </section>
+
+ <footer class="bg-gray-800 text-white py-12 mt-16">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="images/Nowaste.png" alt="NoWaste Logo" class="w-10 h-10 rounded-full">
+          <span class="text-xl font-bold">NoWaste</span>
+        </div>
+        <p class="text-gray-400 text-sm">Smart solution for food waste reduction and community support through efficient donation tracking.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+          <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+          <li><a href="learn-more.html" class="text-gray-400 hover:text-white transition">How It Works</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+        <div class="flex space-x-4 mb-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">Subscribe to our newsletter</p>
+        <div class="flex mt-2">
+          <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l-lg w-full text-gray-800">
+          <button class="bg-green-500 hover:bg-green-600 text-white px-4 rounded-r-lg transition">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p>&copy; 2024 NoWaste Food Tracker. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-white transition">Privacy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Terms</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Cookies</a>
+      </div>
+    </div>
+  </div>
+ </footer>
+
+ <script src="script.js"></script>
+ <script>
+  document.getElementById('donate-button').addEventListener('click', function() {
+    document.getElementById('donation-message').classList.remove('hidden');
+   
+   setTimeout(function() {
+      document.getElementById('donation-message').classList.add('hidden');
+    }, 5000);
+  });
+ </script>
+</body>
+</html>

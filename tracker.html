@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Tracker - Smart Food Wastage and Donation Tracker</title>
+ <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <style>
+  #map {
+   height: 400px;
+   width: 100%;
+   border-radius: 0.75rem;
+  }
+ </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+ <header class="bg-white py-4 shadow-lg border-b-4 border-green-500"> 
+  <nav class="container mx-auto flex items-center justify-between px-4">
+   <div class="flex items-center space-x-4">
+    <img src="images/Nowaste.png" alt="Food Waste Tracker Logo" class="w-16 h-16 rounded-full shadow-md">
+    <div>
+      <a href="index.html" class="text-gray-800 text-2xl font-bold logo-text">NoWaste</a>
+      <p class="text-green-600 text-sm tracking-wider">Smart Food Wastage and Donation Tracker</p>
+    </div>
+   </div>
+   <div class="flex items-center space-x-6">
+    <a href="about.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">About</a>
+    <a href="contact.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">Contact</a>
+    <a href="feedback.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">Feedback</a>
+    <a href="login.html" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full hover:shadow-lg transition duration-300 flex items-center space-x-1">
+      <span>Login</span>
+      <i class="fas fa-arrow-right text-xs"></i>
+    </a>
+   </div>
+  </nav>
+ </header>
+
+ <div class="bg-green-50 py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-3">Donation Tracking</span>
+      <h1 class="text-4xl font-bold mb-6 text-gray-800">Track Your Food Donations</h1>
+      <p class="text-gray-600 leading-relaxed">See the locations where your food donations are making a difference. Monitor your impact on reducing food waste and supporting communities in need.</p>
+    </div>
+  </div>
+ </div>
+
+ <section class="container mx-auto py-16 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12" data-animate="animate-fade-in">
+      <div class="p-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+          <i class="fas fa-map-marker-alt text-green-500 mr-2"></i>
+          Donation Map
+        </h2>
+        <p class="text-gray-600 mb-8">View where your donations are making an impact in Vadodara:</p>
+        
+        <div class="h-96 w-full mb-6">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236253.4972849709!2d73.1147615396349!3d22.31083171644377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc848b29499c5%3A0xabf1f8989239a579!2sVadodara%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1622547148555!5m2!1sen!2sin"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg shadow-md"></iframe>
+                </div>
+        <div class="bg-gray-50 rounded-lg p-4 mb-6">
+          <h3 class="font-semibold text-gray-800 mb-2">About Vadodara</h3>
+          <p class="text-gray-600 text-sm mb-2">Vadodara (formerly known as Baroda) is the third-largest city in Gujarat, India. Known as the Cultural Capital of Gujarat, it is home to the historic Laxmi Vilas Palace and Maharaja Sayajirao University.</p>
+          <p class="text-gray-600 text-sm">Our food donation network in Vadodara has established collection points at key locations throughout the city, making it easier for donors to contribute to reducing hunger and food waste.</p>
+        </div>
+        
+        <div class="flex justify-center space-x-4 mb-4">
+          <div class="flex items-center">
+            <div class="w-4 h-4 rounded-full bg-green-500 mr-2"></div>
+            <span class="text-sm text-gray-600">Your Donations</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-4 h-4 rounded-full bg-blue-500 mr-2"></div>
+            <span class="text-sm text-gray-600">Food Banks</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-4 h-4 rounded-full bg-purple-500 mr-2"></div>
+            <span class="text-sm text-gray-600">Shelters</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div class="bg-white p-8 rounded-xl shadow-lg" data-animate="animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+          <i class="fas fa-history text-blue-500 mr-2"></i>
+          Recent Donations
+        </h2>
+        <ul class="space-y-4">
+          <li class="border-b border-gray-100 pb-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                <i class="fas fa-utensils text-green-600"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-gray-800 font-medium">10 kg of rice</p>
+                <p class="text-gray-600 text-sm">Donated to ABC School on July 10, 2024</p>
+                <div class="flex items-center mt-1">
+                  <div class="flex text-yellow-400 text-xs">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-1">Recipient rating</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="border-b border-gray-100 pb-4">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                <i class="fas fa-seedling text-green-600"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-gray-800 font-medium">5 kg of lentils</p>
+                <p class="text-gray-600 text-sm">Donated to XYZ Shelter on July 12, 2024</p>
+                <div class="flex items-center mt-1">
+                  <div class="flex text-yellow-400 text-xs">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-1">Recipient rating</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-start">
+              <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                <i class="fas fa-apple-alt text-green-600"></i>
+              </div>
+              <div class="ml-3">
+                <p class="text-gray-800 font-medium">15 kg of vegetables</p>
+                <p class="text-gray-600 text-sm">Donated to 123 Food Bank on July 15, 2024</p>
+                <div class="flex items-center mt-1">
+                  <div class="flex text-yellow-400 text-xs">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <span class="text-xs text-gray-500 ml-1">Recipient rating</span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="mt-6 text-center">
+          <a href="#" class="text-green-600 hover:text-green-700 font-medium inline-flex items-center">
+            View all donation history
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="bg-white p-8 rounded-xl shadow-lg" data-animate="animate-fade-in">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+          <i class="fas fa-chart-pie text-purple-500 mr-2"></i>
+          Impact Statistics
+        </h2>
+        
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-green-50 p-4 rounded-lg text-center">
+            <div class="text-green-600 text-3xl font-bold">30kg</div>
+            <p class="text-gray-600 text-sm">Total Food Donated</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg text-center">
+            <div class="text-blue-600 text-3xl font-bold">45</div>
+            <p class="text-gray-600 text-sm">Meals Provided</p>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg text-center">
+            <div class="text-purple-600 text-3xl font-bold">3</div>
+            <p class="text-gray-600 text-sm">Organizations Helped</p>
+          </div>
+          <div class="bg-yellow-50 p-4 rounded-lg text-center">
+            <div class="text-yellow-600 text-3xl font-bold">12kg</div>
+            <p class="text-gray-600 text-sm">CO₂ Emissions Saved</p>
+          </div>
+        </div>
+        
+        <h3 class="font-semibold text-gray-800 mb-2">Donation Categories</h3>
+        <div class="h-4 bg-gray-200 rounded-full mb-6">
+          <div class="flex h-full rounded-full overflow-hidden">
+            <div class="bg-green-500 w-1/3"></div>
+            <div class="bg-blue-500 w-1/4"></div>
+            <div class="bg-purple-500 w-1/5"></div>
+            <div class="bg-yellow-500 w-1/6"></div>
+            <div class="bg-red-500 w-1/12"></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-sm">
+          <div class="flex items-center">
+            <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+            <span class="text-gray-600">Grains (33%)</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+            <span class="text-gray-600">Vegetables (25%)</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+            <span class="text-gray-600">Proteins (20%)</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+            <span class="text-gray-600">Dairy (14%)</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+            <span class="text-gray-600">Other (8%)</span>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <a href="#" class="text-green-600 hover:text-green-700 font-medium inline-flex items-center">
+            View detailed analytics
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg-white p-8 rounded-xl shadow-lg mb-12" data-animate="animate-fade-in">
+      <h2 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fas fa-medal text-yellow-500 mr-2"></i>
+        Your Achievements
+      </h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-3">
+            <i class="fas fa-star text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-800">First Donation</h3>
+          <p class="text-gray-600 text-sm">Donated your first food item</p>
+        </div>
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-3">
+            <i class="fas fa-certificate text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-800">Generous Giver</h3>
+          <p class="text-gray-600 text-sm">Donated more than 25kg of food</p>
+        </div>
+        <div class="text-center opacity-50">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gray-200 text-gray-400 rounded-full mb-3">
+            <i class="fas fa-trophy text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-600">Donation Master</h3>
+          <p class="text-gray-500 text-sm">Donate to 10 organizations</p>
+        </div>
+        <div class="text-center opacity-50">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-gray-200 text-gray-400 rounded-full mb-3">
+            <i class="fas fa-award text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-gray-600">Champion</h3>
+          <p class="text-gray-500 text-sm">Donate consistently for 6 months</p>
+        </div>
+  </div>
+
+      <div class="mt-8 pt-6 border-t border-gray-100">
+        <h3 class="font-semibold text-gray-800 mb-4">Next Goal: Community Hero</h3>
+        <div class="bg-gray-200 h-3 rounded-full overflow-hidden">
+          <div class="bg-green-500 h-full rounded-full" style="width: 65%"></div>
+        </div>
+        <p class="text-gray-600 text-sm text-right mt-1">65% Complete</p>
+      </div>
+    </div>
+    
+    <div class="bg-green-50 p-8 rounded-xl shadow-lg text-center" data-animate="animate-fade-in">
+      <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-3">Get Involved</span>
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">Ready to Donate Again?</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-8">
+        Your contributions make a real difference. Continue your impact by donating more food to those in need.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="food-donor.html" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-hover flex items-center">
+          <i class="fas fa-hand-holding-heart mr-2"></i>Donate Now
+        </a>
+        <a href="#" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-hover flex items-center">
+          <i class="fas fa-share-alt mr-2"></i>Share Your Impact
+        </a>
+      </div>
+    </div>
+  </div>
+ </section>
+
+ <footer class="bg-gray-800 text-white py-12 mt-16">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="images/Nowaste.png" alt="NoWaste Logo" class="w-10 h-10 rounded-full">
+          <span class="text-xl font-bold">NoWaste</span>
+        </div>
+        <p class="text-gray-400 text-sm">Smart solution for food waste reduction and community support through efficient donation tracking.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+          <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+          <li><a href="learn-more.html" class="text-gray-400 hover:text-white transition">How It Works</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+        <div class="flex space-x-4 mb-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">Subscribe to our newsletter</p>
+        <div class="flex mt-2">
+          <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l-lg w-full text-gray-800">
+          <button class="bg-green-500 hover:bg-green-600 text-white px-4 rounded-r-lg transition">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p>&copy; 2024 NoWaste Food Tracker. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-white transition">Privacy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Terms</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Cookies</a>
+      </div>
+    </div>
+  </div>
+ </footer>
+
+ <script src="script.js"></script>
+ <script>
+  // Initialize Google Maps (replace with your API key)
+  function initMap() {
+    // Vadodara coordinates
+    const vadodara = { lat: 22.3072, lng: 73.1812 };
+    
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: vadodara,
+      styles: [
+        {
+          "featureType": "administrative",
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#444444"}]
+        },
+        {
+          "featureType": "landscape",
+          "elementType": "all",
+          "stylers": [{"color": "#f2f2f2"}]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "all",
+          "stylers": [{"visibility": "off"}]
+        },
+        {
+          "featureType": "road",
+          "elementType": "all",
+          "stylers": [{"saturation": -100}, {"lightness": 45}]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "all",
+          "stylers": [{"visibility": "simplified"}]
+        },
+        {
+          "featureType": "road.arterial",
+          "elementType": "labels.icon",
+          "stylers": [{"visibility": "off"}]
+        },
+        {
+          "featureType": "transit",
+          "elementType": "all",
+          "stylers": [{"visibility": "off"}]
+        },
+        {
+          "featureType": "water",
+          "elementType": "all",
+          "stylers": [{"color": "#c4e7f2"}, {"visibility": "on"}]
+        }
+      ]
+    });
+    
+    // Add donation locations
+    const locations = [
+      { name: "ABC School", position: { lat: 22.3172, lng: 73.1612 }, type: "school" },
+      { name: "XYZ Shelter", position: { lat: 22.2972, lng: 73.2012 }, type: "shelter" },
+      { name: "123 Food Bank", position: { lat: 22.3272, lng: 73.1912 }, type: "foodbank" }
+    ];
+    
+    // Add markers for each location
+    locations.forEach(location => {
+      let icon = {
+        url: location.type === 'school' ? 'https://maps.google.com/mapfiles/ms/icons/green-dot.png' :
+             location.type === 'shelter' ? 'https://maps.google.com/mapfiles/ms/icons/purple-dot.png' :
+             'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+        scaledSize: new google.maps.Size(40, 40)
+      };
+      
+      const marker = new google.maps.Marker({
+        position: location.position,
+        map: map,
+        title: location.name,
+        icon: icon,
+        animation: google.maps.Animation.DROP
+      });
+      
+      const infoWindow = new google.maps.InfoWindow({
+        content: `<div class="p-2">
+                    <h3 class="font-bold">${location.name}</h3>
+                    <p>Your donation is making a difference here!</p>
+                  </div>`
+      });
+      
+      marker.addListener("click", () => {
+        infoWindow.open(map, marker);
+      });
+    });
+  }
+ </script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

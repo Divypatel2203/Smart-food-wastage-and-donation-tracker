@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Feedback - Smart Food Wastage and Donation Tracker</title>
+ <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 font-sans">
+
+ <header class="bg-white py-4 shadow-lg border-b-4 border-green-500"> 
+  <nav class="container mx-auto flex items-center justify-between px-4">
+   <div class="flex items-center space-x-4">
+    <img src="images/Nowaste.png" alt="Food Waste Tracker Logo" class="w-16 h-16 rounded-full shadow-md">
+    <div>
+      <a href="index.html" class="text-gray-800 text-2xl font-bold logo-text">NoWaste</a>
+      <p class="text-green-600 text-sm tracking-wider">Smart Food Wastage and Donation Tracker</p>
+    </div>
+   </div>
+   <div class="flex items-center space-x-6">
+    <a href="about.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">About</a>
+    <a href="contact.html" class="text-gray-700 hover:text-green-600 transition duration-300 nav-link">Contact</a>
+    <a href="feedback.html" class="text-green-600 hover:text-green-700 font-medium transition duration-300 nav-link">Feedback</a>
+    <a href="login.html" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full hover:shadow-lg transition duration-300 flex items-center space-x-1">
+      <span>Login</span>
+      <i class="fas fa-arrow-right text-xs"></i>
+    </a>
+   </div>
+  </nav>
+ </header>
+
+ <div class="bg-green-50 py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-3">Feedback</span>
+      <h1 class="text-4xl font-bold mb-6 text-gray-800">Share Your Experience</h1>
+      <p class="text-gray-600 leading-relaxed">Your feedback helps us improve. Tell us about your experience with NoWaste and how we can make it even better.</p>
+    </div>
+  </div>
+ </div>
+
+ <section class="container mx-auto py-16 px-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div class="bg-white p-8 rounded-xl shadow-lg" data-animate="animate-fade-in">
+      <h2 class="text-2xl font-bold mb-6 text-gray-800">Submit Your Feedback</h2>
+      <form>
+        <div class="mb-6">
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+          <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition">
+        </div>
+        <div class="mb-6">
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+          <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition">
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-medium text-gray-700 mb-2">Your Experience</label>
+          <div class="flex items-center space-x-4 mb-2">
+            <div class="flex items-center">
+              <input type="radio" id="excellent" name="rating" value="excellent" class="h-4 w-4 text-green-600 focus:ring-green-500">
+              <label for="excellent" class="ml-2 text-gray-700">Excellent</label>
+            </div>
+            <div class="flex items-center">
+              <input type="radio" id="good" name="rating" value="good" class="h-4 w-4 text-green-600 focus:ring-green-500">
+              <label for="good" class="ml-2 text-gray-700">Good</label>
+            </div>
+            <div class="flex items-center">
+              <input type="radio" id="fair" name="rating" value="fair" class="h-4 w-4 text-green-600 focus:ring-green-500">
+              <label for="fair" class="ml-2 text-gray-700">Fair</label>
+            </div>
+            <div class="flex items-center">
+              <input type="radio" id="poor" name="rating" value="poor" class="h-4 w-4 text-green-600 focus:ring-green-500">
+              <label for="poor" class="ml-2 text-gray-700">Poor</label>
+            </div>
+          </div>
+        </div>
+        <div class="mb-6">
+          <label for="feedback-type" class="block text-sm font-medium text-gray-700 mb-1">Feedback Type</label>
+          <select id="feedback-type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition">
+            <option value="">Please select</option>
+            <option value="app">App Experience</option>
+            <option value="donation">Donation Process</option>
+            <option value="tracking">Food Tracking</option>
+            <option value="suggestions">Feature Suggestions</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="mb-6">
+          <label for="feedback" class="block text-sm font-medium text-gray-700 mb-1">Your Feedback</label>
+          <textarea id="feedback" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition"></textarea>
+        </div>
+        <div class="mb-6">
+          <label class="flex items-center">
+            <input type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+            <span class="ml-2 text-gray-600 text-sm">I agree to have my feedback published anonymously on the website.</span>
+      </label>
+        </div>
+        <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-lg transition duration-300 transform hover:scale-105 btn-hover">
+          <i class="fas fa-paper-plane mr-2"></i>Submit Feedback
+        </button>
+      </form>
+    </div>
+    
+    <div>
+      <h2 class="text-2xl font-bold mb-6 text-gray-800">Why Your Feedback Matters</h2>
+      <div class="bg-white p-6 rounded-xl shadow-md mb-8" data-animate="animate-fade-in">
+        <div class="flex items-start">
+          <div class="flex-shrink-0 h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+            <i class="fas fa-lightbulb text-green-600"></i>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-800">Continuous Improvement</h3>
+            <p class="text-gray-600">Your insights help us identify areas where we can enhance our services and features.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md mb-8" data-animate="animate-fade-in">
+        <div class="flex items-start">
+          <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+            <i class="fas fa-users text-blue-600"></i>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-800">User-Centered Design</h3>
+            <p class="text-gray-600">We build our platform around your needs and preferences to create the best possible experience.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md" data-animate="animate-fade-in">
+        <div class="flex items-start">
+          <div class="flex-shrink-0 h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
+            <i class="fas fa-chart-line text-purple-600"></i>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg font-semibold text-gray-800">Measuring Impact</h3>
+            <p class="text-gray-600">Your feedback helps us understand the real-world impact of our platform on food waste reduction.</p>
+          </div>
+        </div>
+     </div>
+    </div>
+  </div>
+ </section>
+
+ <section class="bg-green-50 py-16">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-12">
+      <span class="inline-block px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium mb-3">Testimonials</span>
+      <h2 class="text-3xl font-bold text-gray-800">What Our Users Say</h2>
+      <p class="text-gray-600 mt-4">Hear from individuals and organizations who have experienced the benefits of NoWaste.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-md" data-animate="animate-fade-in">
+        <div class="flex items-center mb-4">
+          <div class="text-yellow-400 flex">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="ml-2 text-gray-600 text-sm">5.0</span>
+        </div>
+        <p class="text-gray-600 italic mb-6">"NoWaste has transformed how our restaurant handles excess food. Instead of throwing it away, we're now able to connect with local shelters and donate it. The process is simple and rewarding."</p>
+        <div class="flex items-center">
+          <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-semibold">
+            MR
+          </div>
+          <div class="ml-3">
+            <h4 class="font-semibold text-gray-800">Michael Rodriguez</h4>
+            <p class="text-gray-500 text-sm">Restaurant Owner</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white p-6 rounded-xl shadow-md" data-animate="animate-fade-in">
+        <div class="flex items-center mb-4">
+          <div class="text-yellow-400 flex">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <span class="ml-2 text-gray-600 text-sm">4.5</span>
+        </div>
+        <p class="text-gray-600 italic mb-6">"As a food bank manager, NoWaste has significantly increased our donation sources. The platform connects us with businesses and individuals we wouldn't otherwise reach. It's been invaluable for our community."</p>
+        <div class="flex items-center">
+          <div class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-semibold">
+            SJ
+          </div>
+          <div class="ml-3">
+            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+            <p class="text-gray-500 text-sm">Food Bank Manager</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-white p-6 rounded-xl shadow-md" data-animate="animate-fade-in">
+        <div class="flex items-center mb-4">
+          <div class="text-yellow-400 flex">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="ml-2 text-gray-600 text-sm">5.0</span>
+        </div>
+        <p class="text-gray-600 italic mb-6">"The food tracking feature has helped our family reduce waste by nearly 40%. We're more aware of what we have in our fridge and pantry, and the expiration notifications are super helpful."</p>
+        <div class="flex items-center">
+          <div class="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-semibold">
+            DP
+          </div>
+          <div class="ml-3">
+            <h4 class="font-semibold text-gray-800">David Patel</h4>
+            <p class="text-gray-500 text-sm">Home User</p>
+          </div>
+        </div>
+     </div>
+    </div>
+  </div>
+ </section>
+
+ <section class="py-16 container mx-auto px-4 text-center">
+  <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden" data-animate="animate-fade-in">
+    <div class="bg-gradient-to-r from-green-500 to-blue-500 py-8 px-6 text-white">
+      <h2 class="text-3xl font-bold mb-2">Your Opinion Shapes Our Future</h2>
+      <p>Help us create the best food waste reduction platform possible.</p>
+    </div>
+    <div class="p-8">
+      <div class="flex flex-wrap justify-center gap-8 mb-8">
+        <div class="text-center">
+          <div class="text-green-500 text-4xl font-bold mb-2">1,500+</div>
+          <p class="text-gray-600">Feedback submissions received</p>
+        </div>
+        <div class="text-center">
+          <div class="text-blue-500 text-4xl font-bold mb-2">85%</div>
+          <p class="text-gray-600">Feature improvements from user feedback</p>
+        </div>
+        <div class="text-center">
+          <div class="text-purple-500 text-4xl font-bold mb-2">97%</div>
+          <p class="text-gray-600">User satisfaction rate</p>
+        </div>
+      </div>
+      <p class="text-gray-600 mb-8">
+        We've implemented hundreds of improvements based on your feedback, from enhanced donation tracking to simplified user interfaces.
+      </p>
+      <a href="#" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-hover inline-flex items-center">
+        <i class="fas fa-comment mr-2"></i>Share Your Ideas
+      </a>
+    </div>
+  </div>
+ </section>
+
+ <footer class="bg-gray-800 text-white py-12 mt-16">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="images/Nowaste.png" alt="NoWaste Logo" class="w-10 h-10 rounded-full">
+          <span class="text-xl font-bold">NoWaste</span>
+        </div>
+        <p class="text-gray-400 text-sm">Smart solution for food waste reduction and community support through efficient donation tracking.</p>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+          <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+          <li><a href="learn-more.html" class="text-gray-400 hover:text-white transition">How It Works</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+        <div class="flex space-x-4 mb-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-500 transition"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">Subscribe to our newsletter</p>
+        <div class="flex mt-2">
+          <input type="email" placeholder="Your email" class="px-3 py-2 rounded-l-lg w-full text-gray-800">
+          <button class="bg-green-500 hover:bg-green-600 text-white px-4 rounded-r-lg transition">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <p>&copy; 2024 NoWaste Food Tracker. All rights reserved.</p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-white transition">Privacy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Terms</a>
+        <a href="#" class="text-gray-400 hover:text-white transition">Cookies</a>
+      </div>
+    </div>
+  </div>
+ </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>
